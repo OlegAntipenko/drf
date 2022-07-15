@@ -19,10 +19,7 @@ def hello_world(request):
 @api_view(http_method_names=['GET'])
 def my_name(request):
     name = request.query_params
-    for key, value in name.items():
-        result = value
-    return_dict = {'name': result}
-    return Response(return_dict)
+    return Response({'name': name['name']})
 
 
 @api_view(http_method_names=['GET'])
